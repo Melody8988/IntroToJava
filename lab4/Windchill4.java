@@ -18,16 +18,20 @@ public class Windchill4 {
             // If windspeed is below 4, the windchill is just air temperature
             if (windspeed < 4) {
                 windchill = tempF;
+            } 
 
-            } else {
+            else {
                 windchill = (0.6215 * tempF) - (35.75 * Math.pow(windspeed, 0.16))
                         + (0.4275 * tempF * Math.pow(windspeed, 0.16)) + 35.74;
-
             }
 
             System.out.printf("%15.1f %10.1f %14.1f\n", windspeed, tempF, windchill);
-        
             windspeed++;
+
+            // for (int lineCount = 1; lineCount == 5; lineCount++) {
+            //     System.out.println(lineCount);
+            //     // System.out.println("----------------\n");
+            // }
 
         }
     }
