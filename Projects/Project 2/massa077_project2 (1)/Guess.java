@@ -2,8 +2,10 @@
 
 public class Guess {
 	public static void main(String[] args) { //main
-		int min, max, guess;
+		int min, max, guess, count;
 		char evaluation;
+
+		count = 1;
 
 		//Greeting & set range of game
 		System.out.println(
@@ -47,12 +49,17 @@ public class Guess {
 				System.out.println("Okay, I'll guess lower");
 				System.out.println("Is your number: " + guess);
 			}
+			count++;
 			evaluation = TextIO.getChar();
 		}
 
 		//If user says program guess is equal to their number
-		if (evaluation == '='){
-			System.out.println("Yay! I got it right!");
+		if (evaluation == '=' && count <= 5){
+			System.out.println("Yay! I got it right! And it only took me " + count +  " tries!");
+		}else if (evaluation == '=' && count <= 10){
+			System.out.println("I got it right! It took me " + count +  " tries!");
+		}else {
+			System.out.println("I got it right after " + count + " tries. Not my best day ¯\\_(ツ)_/¯ But in my defense, you ether set a huge range, or you lied to me.");
 		}
 	} // end of main
 
@@ -60,5 +67,5 @@ public class Guess {
 	public static int randomInt(int min, int max) { //random method
 		return (int) ((Math.random() * ((max - min) + 1)) + min);
 	} //end of random method
-	
+
 } // end of Guess class
