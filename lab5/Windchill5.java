@@ -1,17 +1,11 @@
 public class Windchill5 {
     public static void main(String[] args) {
         double windchill, windspeed, tempF, iteratedTemp, lineCount;
-        // windspeed = Double.valueOf(args[0]); //No longer taking windspeed
 
         tempF = Double.valueOf(args[0]);
         iteratedTemp = Double.valueOf(args[0]) - 20;
         lineCount = 0;
         windchill=0;
-
-        // if (windspeed < 0) {
-        //     System.out.println("Error: WindSpeeds cannot be below 0. ");
-        //     return;
-        // } //No longer taking windspeed 
 
         System.out.println("  Temp (F)     Wind=5    Wind=10    Wind=15    Wind=20    Wind=25 ");
 

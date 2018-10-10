@@ -16,7 +16,7 @@ public class Windchill4 {
         while (windspeed < iteratedWind) {
 
             if (lineCount % 5 == 0) {
-                System.out.println("--------------------------------------------");
+                System.out.println("-------------------------------------------\n");
 
             }
 
