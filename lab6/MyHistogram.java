@@ -8,7 +8,6 @@ public class MyHistogram {
         int[] hist = new int[101];
         int i = 0;
     
-
         // Initialize all score fruequencies to 0
         for (i = 0; i < 100; i++) {
             hist[i] = 0;
@@ -24,12 +23,14 @@ public class MyHistogram {
 
         // Print non zero indexes
         int maxFrequency = Integer.valueOf(hist[0]);
+        int mode = 0 ;
         for (i = 0; i < hist.length; i++) {
             if (hist[i] != 0) {
                 System.out.println("Non zero numbers in histogram: " + i);
             }
             if (hist[i] > maxFrequency){
-                
+                maxFrequency = Integer.valueOf(hist[i]);
+                mode = i;
             }
 
         }
@@ -38,7 +39,6 @@ public class MyHistogram {
         int min = Integer.valueOf(args[0]);
         int max = Integer.valueOf(args[0]);
         int mean = 0;
-        int mode;
         for (i = 0; i < args.length; i++) {
             
             if (Integer.valueOf(args[i]) < min) {
@@ -47,14 +47,12 @@ public class MyHistogram {
             if (Integer.valueOf(args[i]) > max) {
                 max = Integer.valueOf(args[i]);
             } 
-            
             mean = mean + Integer.valueOf(args[i]);
-            
-
         }
         System.out.println("Lowest value is: " + min);
         System.out.println("Highest value is: " + max);
         System.out.println("Mean is: " + mean);
+        System.out.println("Mode is : " + mode + " because it occours " + maxFrequency + " times ");
         // System.out.println("Mode is: " + mode);
         // System.out.println("Median is: " + median);
 
