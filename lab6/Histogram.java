@@ -43,3 +43,4 @@ public class Histogram {
         }  //  while - print rows of histogram 
     }  // main
 }  // Histogram 
+

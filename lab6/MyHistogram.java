@@ -1,12 +1,8 @@
-// Write a loop (and locate it between your initialization and printing loops in your code from Step 1 above)
-// that will process each legal score from args by updating the appropriate index in hist. Compile and run
-// your program. With values entered into your histogram, you should now see some output. When you are
-// convinced that your code is working, have a TA check this step.
-
 public class MyHistogram {
     public static void main(String[] args) {
         int[] hist = new int[101];
         int i = 0;
+        int j=0;
     
         // Initialize all score fruequencies to 0
         for (i = 0; i < 100; i++) {
@@ -35,6 +31,11 @@ public class MyHistogram {
 
         }
 
+        for (i=0; i<hist.length; i++){
+            if (i == maxFrequency)
+            System.out.println("the real modes are: " + i);
+        }
+
         //Find lowest value
         int min = Integer.valueOf(args[0]);
         int max = Integer.valueOf(args[0]);
@@ -52,9 +53,16 @@ public class MyHistogram {
         System.out.println("Lowest value is: " + min);
         System.out.println("Highest value is: " + max);
         System.out.println("Mean is: " + mean);
-        System.out.println("Mode is : " + mode + " because it occours " + maxFrequency + " times ");
-        // System.out.println("Mode is: " + mode);
+        System.out.println("Mode is : " + mode + " because it occurs " + maxFrequency + " times ");
         // System.out.println("Median is: " + median);
+        //have another loop, find all that match the highest frequency and print out 
+
+        // //Picture.java
+        // char [] [] frame = new char[3][4];
+        // for (int row =0;row<frame.length; row++){
+        //     for (int col =0; col<frame[row].length; col++)
+        //         frame[row][col] = 'what your assigning it to as a character';
+        // }
 
          
 
