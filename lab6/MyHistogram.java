@@ -27,13 +27,9 @@ public class MyHistogram {
             if (hist[i] > maxFrequency){
                 maxFrequency = Integer.valueOf(hist[i]);
                 mode = i;
+
             }
 
-        }
-
-        for (i=0; i<hist.length; i++){
-            if (i == maxFrequency)
-            System.out.println("the real modes are: " + i);
         }
 
         //Find lowest value
@@ -50,10 +46,20 @@ public class MyHistogram {
             } 
             mean = mean + Integer.valueOf(args[i]);
         }
+
+
         System.out.println("Lowest value is: " + min);
         System.out.println("Highest value is: " + max);
         System.out.println("Mean is: " + mean);
-        System.out.println("Mode is : " + mode + " because it occurs " + maxFrequency + " times ");
+        System.out.printf("Mode is: ");
+        //Find mode
+        for (i=0; i < hist.length; i++){
+            if (hist[i] == maxFrequency ){
+                System.out.printf(i + " ");
+            }
+        }
+        System.out.println("\n");
+
         // System.out.println("Median is: " + median);
         //have another loop, find all that match the highest frequency and print out 
 
