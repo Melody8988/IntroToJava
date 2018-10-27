@@ -1,8 +1,6 @@
 public class Puzzle {
     // Melody Massard, 5140983, massa077
-
     // 15-Puzzle Implementation
-
     // from Project 2
     public static int randomInt(int min, int max) {
         return (int) ((Math.random() * ((max - min) + 1)) + min);
@@ -98,7 +96,7 @@ public class Puzzle {
 
     public static void playLoop(int[][] p, int[][] sol) {
 
-        //First iteration outside of loop so n is recognized by if statement 
+        //First iteration outside of loop so n is recognized by if statement and directions are given
         System.out.println("Please enter a number between 1-15 that is adjacent to the 0 to swap with it.");
         int n = TextIO.getInt();
         swapper(p, n);
@@ -140,5 +138,4 @@ public class Puzzle {
         playLoop(puzzle, solution);
 
     } // main
-
 } // Project 3
