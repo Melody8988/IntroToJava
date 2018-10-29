@@ -48,7 +48,7 @@ public class Rational {
     }
 
     //Copy rational
-    public void copy(Rational anotherRational){
+    public void copy(Rational r){
 
     }
 
