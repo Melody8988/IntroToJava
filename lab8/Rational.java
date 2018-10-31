@@ -2,7 +2,7 @@ public class Rational {
 
     private int numerator;
     private int denominator;
-    private int product;
+    
 
     public Rational() {
 
@@ -48,7 +48,41 @@ public class Rational {
     }
 
     //Copy rational
-    public void copy(Rational r){
+    public void copy(Rational anotherRational){
+
+        int n = anotherRational.getNumerator();
+        int d = anotherRational.getDenominator();
+
+        n = numerator ;
+        d = denominator;
+
+        anotherRational.setNumerator(n);
+        anotherRational.setDenominator(d);
+
+        
+    }
+
+    public Rational clone(){
+
+        Rational clonedRational = new Rational(numerator, denominator);
+
+        int n = numerator;
+        int d = denominator;
+
+        clonedRational.setNumerator(n);
+        clonedRational.setDenominator(d);
+
+    
+
+        return clonedRational;
+
+        
+
+        // clonedRational = new Rational(numerator, denominator);
+        // clonedRational.numerator = r2.getNumerator();
+
+        // return r3;
+
 
     }
 
@@ -95,8 +129,12 @@ public class Rational {
         // r1 and r2 will remain ½ and ¾ respectively
 
         r1.copy(r3);
-        System.out.println(r3.toString());
-        // ½ will be printed (r1 values were copied into r3)
+        System.out.println("copy " + r3.toString());
+        // // ½ will be printed (r1 values were copied into r3)
+
+        r3 = r2.clone();
+        System.out.println("clone " + r3.toString());
+        // // ¾ is printed (r3 points to a new Rational identical to r2)
        
 
     }
