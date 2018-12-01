@@ -43,21 +43,9 @@ public class TwentyQuestions {
 
 		playLoop(animalList, answer);
 
-		System.out.println();
-		System.out.println("Question's are up!");
-		System.out.println("Make your final guess");
-
-		if (r.hasNext());
-		String finalGuess = r.nextLine();
-
-		if (answer.getName().equals(finalGuess)) {
-			System.out.println("Yay! You got it right! The anwer was " + finalGuess + ".");
-			return;
-		} else {
-			System.out.println();
-			System.out.println("Sorry, " + finalGuess + " is not it. You loose.");
-
-		}
+		
+		
+		
 
 	}// end main
 
@@ -85,12 +73,11 @@ public class TwentyQuestions {
 				questionsLeft--;
 
 				if (input.equals("1")) {
-					
-					
 					RelationalQuestion q1 = new RelationalQuestion (animalArray, answer);
-					q1.AskQuestion();
-					if (q1.AskQuestion() == false) {
+					Boolean result = q1.AskQuestion();
+					if (result == false ) {
 						questionsLeft++; //neutalize decrement of questions if returned false
+					
 					}
 				}
 				if (input.equals("2")) {
@@ -148,5 +135,25 @@ public class TwentyQuestions {
 
 			} // end input if
 		} // end while
+
+		//last chance
+		if (questionsLeft == 0 ){
+
+		System.out.println();
+		System.out.println("Question's are up!");
+		System.out.println("Make your final guess");
+
+		if (s.hasNext());
+		String finalGuess = s.nextLine();
+
+		if (answer.getName().equals(finalGuess)) {
+			System.out.println("Yay! You got it right! The anwer was " + finalGuess + ".");
+			return;
+		} else {
+			System.out.println();
+			System.out.println("Sorry, " + finalGuess + " is not it. You loose.");
+
+		}
+		}
 	}// end play loop
 }// end TwentyQuestions
