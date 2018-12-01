@@ -24,38 +24,16 @@ public class Question {
 		return true;
 	}
 
-	// Returns the index of the animal whose name is "name"
-	// or -1 if an animal with name "name" was not found in
-	// the array.
 	protected int getIndexByName(String name) {
-		System.out.println(animals.length);
 		int x = 0;
-		
-	
 		for (int i = 0; i < animals.length; i++) {
 			if (animals[i].getName().equals(name)){
 				x=i;
-				
-			} else {
-				x=-1;
-				
+				return x; // return the index of the animal whose name is "name"
+			} else { 
+				x=-1; // -1 if an animal with name "name" was not found
 			}
 		} 
 		return x;
-
-
-
-		/*
-			Step 1: Loop through the animals array and look
-			for an animal whose name is "name". (You will need
-			to use the getName() method).
-
-			If you find it, then immediately return its index.
-		*/
-
-		/*
-			Step 2: If you made it through the whole array without
-			returning, then you didn't find that animal. so return -1.
-		*/
 	}//end getIndexByName
 }// end Question

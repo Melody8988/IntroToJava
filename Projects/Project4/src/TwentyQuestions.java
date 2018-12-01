@@ -60,6 +60,7 @@ public class TwentyQuestions {
 
 			System.out.println();
 			System.out.println("You get " + questionsLeft + " more questions to ask");
+			System.out.println("Psst, developer, the answer is: " + answer.getName() );
 			System.out.println();
 			System.out.printf(
 					" \n 1. Ask a relational question \n 2. Ask an existential question \n 3. Make a guess \n 4. Lookup an animal in the database \n 5. Quit \n ");
