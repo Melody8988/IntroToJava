@@ -55,9 +55,9 @@ public class RelationalQuestion extends Question {
 							} else {
 								decideToDecrement = true;
 								if (animals[index].getWeight() < answer.getWeight() ){
-									System.out.println("Yes, the animal is heavier than a " + animals[index].getName());
+									System.out.println(Ansi.GREEN + "Yes" +  Ansi.RESET + " the animal is heavier than a " + animals[index].getName());
 								} else {
-									System.out.println("The animal is not heavier than a " +  animals[index].getName() );
+									System.out.println(Ansi.RED + "No" + Ansi.RESET + " the animal is not heavier than a " +  animals[index].getName() );
 								}//end else
 							}//end valid animal else
 						}//end hasNext if
@@ -71,14 +71,14 @@ public class RelationalQuestion extends Question {
 							System.out.println("Is it taller than a " + tallerThanAnimal + " ?");
 							int index = getIndexByName(tallerThanAnimal); 
 							if (index == -1){
-								System.out.println("There is no such animal in the database :( ");
+								System.out.println("There is no such animal in the database :( " );
 								decideToDecrement = false;
 							} else {
 								decideToDecrement = true;
 								if (animals[index].getHeight() < answer.getHeight() ){
-									System.out.println("Yes, the animal is taller than a " + animals[index].getName());
+									System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + "the animal is taller than a " + animals[index].getName());
 								} else {
-									System.out.println("The animal is not taller than a " +  animals[index].getName() );
+									System.out.println(Ansi.RED + "No " + Ansi.RESET + "the animal is not taller than a " +  animals[index].getName() );
 								}//end else
 							}//end valid animal else
 						}//end hasNext if
@@ -92,14 +92,14 @@ public class RelationalQuestion extends Question {
 							System.out.println("Is it longer than a " + longerThanAnimal + " ?");
 							int index = getIndexByName(longerThanAnimal); 
 							if (index == -1){
-								System.out.println("There is no such animal in the database :( ");
+								System.out.println(Ansi.MAGENTA + "There is no such animal in the database" + Ansi.RESET);
 								decideToDecrement = false;
 							} else {
 								decideToDecrement = true;
 								if (animals[index].getLength() < answer.getLength() ){
-									System.out.println("Yes, the animal is longer than a " + animals[index].getName());
+									System.out.println(Ansi.GREEN + "Yes the animal is longer than a " + animals[index].getName());
 								} else {
-									System.out.println("The animal is not longer than a " +  animals[index].getName() );
+									System.out.println(Ansi.RED + "No "  + Ansi.RESET + "the animal is not longer than a " +  animals[index].getName() );
 								}//end else
 							}//end valid animal else
 						}//end hasNext if
@@ -234,18 +234,3 @@ public class RelationalQuestion extends Question {
 		return decideToDecrement;
 	}// end AskQuestion
 }// end RelationalQuestion
-
-/*
-
- * If they entered 1-4 then prompt the user to input the name of another animal
- * to compare, and find its index using the "getIndexByName()" method inherited
- * from Question.java.
- * 
- * If they entered 5-8, prompt them to enter a value for x.
- * 
- * Then call the appropriate functions of the "answer" variable, passing in x or
- * the other animal as needed.
- * 
- * Do the proper comparison relative to the inputs 1-8, and print the result to
- * the terminal. Then return true.
- */
