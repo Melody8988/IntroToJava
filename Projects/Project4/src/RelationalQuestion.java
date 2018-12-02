@@ -46,7 +46,7 @@ public class RelationalQuestion extends Question {
 				if (relationalQuestionNumber.equals("1")) {
 					System.out.println("Please enter the animal you wish to compare weight");
 						if (q.hasNext()) {
-							String heavierThanAnimal = q.next();
+							String heavierThanAnimal = q.nextLine();
 							System.out.println("Is it heavier than a " + heavierThanAnimal + " ?");
 							int index = getIndexByName(heavierThanAnimal); 
 							if (index == -1){
@@ -67,7 +67,7 @@ public class RelationalQuestion extends Question {
 				if (relationalQuestionNumber.equals("2")) {
 					System.out.println("Please enter the animal you wish to compare height");
 						if (q.hasNext()) {
-							String tallerThanAnimal = q.next();
+							String tallerThanAnimal = q.nextLine();
 							System.out.println("Is it taller than a " + tallerThanAnimal + " ?");
 							int index = getIndexByName(tallerThanAnimal); 
 							if (index == -1){
@@ -88,7 +88,7 @@ public class RelationalQuestion extends Question {
 				if (relationalQuestionNumber.equals("3")) {
 					System.out.println("Please enter the animal you wish to compare length");
 						if (q.hasNext()) {
-							String longerThanAnimal = q.next();
+							String longerThanAnimal = q.nextLine();
 							System.out.println("Is it longer than a " + longerThanAnimal + " ?");
 							int index = getIndexByName(longerThanAnimal); 
 							if (index == -1){
@@ -109,7 +109,7 @@ public class RelationalQuestion extends Question {
 				if (relationalQuestionNumber.equals("4")) {
 					System.out.println("Please enter the animal you wish to compare speed");
 						if (q.hasNext()) {
-							String fasterThanAnimal = q.next();
+							String fasterThanAnimal = q.nextLine();
 							System.out.println("Is it faster than a " + fasterThanAnimal + " ?");
 							int index = getIndexByName(fasterThanAnimal); 
 							if (index == -1){
@@ -223,6 +223,7 @@ public class RelationalQuestion extends Question {
 
 				//GO BACK
 				if (relationalQuestionNumber.equals("9")) {
+					System.out.println("Okay!");
 					decideToDecrement = false;
 				}
 			} // end realtionalQuestion if

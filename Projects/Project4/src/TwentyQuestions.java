@@ -82,11 +82,9 @@ public class TwentyQuestions {
 					}
 				}
 				if (input.equals("2")) {
-					boolean dummyValue = true;
-					System.out.println("You put 2!");
-					// ExistentialQuestion eq1 = new ExistentialQuestion (animalArray, answer);
-					// eq1.AskQuestion();
-					if (dummyValue == false) {
+					ExistentialQuestion eq1 = new ExistentialQuestion (animalArray, answer);
+					Boolean existentialResult = eq1.AskQuestion();
+					if (existentialResult == false) {
 						questionsLeft++;
 					}
 				}
