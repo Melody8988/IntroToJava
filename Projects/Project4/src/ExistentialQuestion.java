@@ -44,9 +44,9 @@ public class ExistentialQuestion extends Question {
 							String has = q.next();
 							System.out.println("Does it have " + has + "?");
 							if (answer.hasX(has) == true){
-								System.out.println("Yes, it has " + has + "!");
+								System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + " it has " + has + "!");
 							} else {
-								System.out.println("No, it does not have" + has);
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + " it does not have" + has);
 							}
 						}//end hasNext if
 				}//end if equals 1
@@ -57,9 +57,9 @@ public class ExistentialQuestion extends Question {
 							String ability = q.next();
 							System.out.println("Can it " + ability + "?");
 							if (answer.canX(ability) == true){
-								System.out.println("Yes, it can " + ability + "!");
+								System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + " it can " + ability + "!");
 							} else {
-								System.out.println("No, it cannot " + ability);
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + " it cannot " + ability);
 							}
 						}//end hasNext if
 				}//end if equals 2
@@ -72,7 +72,7 @@ public class ExistentialQuestion extends Question {
 							if (answer.isX(characteristic) == true){
 								System.out.println("Yes, it is " + characteristic + "!");
 							} else {
-								System.out.println("No, it is not " + characteristic);
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + " it is not " + characteristic);
 							}
 						}//end hasNext if
 				}//end if equals 3
@@ -83,21 +83,21 @@ public class ExistentialQuestion extends Question {
 							String food = q.next();
 							System.out.println("Does it eat " + food + "?");
 							if (answer.eatsX(food) == true){
-								System.out.println("Yes, it eats " + food + "!");
+								System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + " it eats " + food + "!");
 							} else {
-								System.out.println("No, it does not eat " + food);
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + " it does not eat " + food);
 							}
 						}//end hasNext if
 				}//end if equals 4
 				
 				if (existentialQuestionNumber.equals("5")) {
-					System.out.println("Okay!");
+					System.out.println(Ansi.MAGENTA + "Okay!" + Ansi.RESET);
 					decideToDecrement = false;
 				}
 
 			} // end existentialQuestion if
 			else {
-				System.out.println("Please enter a number between 1-5");
+				System.out.println(Ansi.MAGENTA + "Please enter a number between 1-5"+ Ansi.RESET);
 			} // end else
 		} // end while
 		return decideToDecrement;

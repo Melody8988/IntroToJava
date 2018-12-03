@@ -50,7 +50,7 @@ public class RelationalQuestion extends Question {
 							System.out.println("Is it heavier than a " + heavierThanAnimal + " ?");
 							int index = getIndexByName(heavierThanAnimal); 
 							if (index == -1){
-								System.out.println("There is no such animal in the database :( ");
+								System.out.println("There is no such animal in the database");
 								decideToDecrement = false;
 							} else {
 								decideToDecrement = true;
@@ -92,12 +92,12 @@ public class RelationalQuestion extends Question {
 							System.out.println("Is it longer than a " + longerThanAnimal + " ?");
 							int index = getIndexByName(longerThanAnimal); 
 							if (index == -1){
-								System.out.println(Ansi.MAGENTA + "There is no such animal in the database" + Ansi.RESET);
+								System.out.println("There is no such animal in the database");
 								decideToDecrement = false;
 							} else {
 								decideToDecrement = true;
 								if (animals[index].getLength() < answer.getLength() ){
-									System.out.println(Ansi.GREEN + "Yes the animal is longer than a " + animals[index].getName());
+									System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + " the animal is longer than a " + animals[index].getName());
 								} else {
 									System.out.println(Ansi.RED + "No "  + Ansi.RESET + "the animal is not longer than a " +  animals[index].getName() );
 								}//end else
@@ -118,9 +118,9 @@ public class RelationalQuestion extends Question {
 							} else {
 								decideToDecrement = true;
 								if (animals[index].getSpeed() < answer.getSpeed() ){
-									System.out.println("Yes, the animal is faster than a " + animals[index].getName());
+									System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + "the animal is faster than a " + animals[index].getName());
 								} else {
-									System.out.println("The animal is not faster than a " +  animals[index].getName() );
+									System.out.println(Ansi.RED + "No " + Ansi.RESET + " the animal is not faster than a " +  animals[index].getName() );
 								}//end else
 							}//end valid animal else
 						}//end hasNext if
@@ -137,9 +137,9 @@ public class RelationalQuestion extends Question {
 							decideToDecrement = true;
 							System.out.println("Is it heavier than " + lbs + " lbs?");
 							if (lbs < answer.getWeight()) {
-								System.out.println("Yes, the animal weighs more than " + lbs + " lbs");
+								System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + "the animal weighs more than " + lbs + " lbs");
 							} else {
-								System.out.println("No, the animal does not weigh more than  " + lbs + " lbs");
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + "the animal does not weigh more than  " + lbs + " lbs");
 							}//end else
 						} // end if int
 						else if (q.hasNext()) {
@@ -161,9 +161,9 @@ public class RelationalQuestion extends Question {
 							System.out.println("Is it taller than " + feet + " feet?");
 							System.out.println(answer.getHeight());
 							if (feet < answer.getHeight()) {
-								System.out.println("Yes, the animal is taller than " + feet + " feet");
+								System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + "the animal is taller than " + feet + " feet");
 							} else {
-								System.out.println("No, the animal is not taller than " + feet + " feet");
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + "the animal is not taller than " + feet + " feet");
 							}
 						} // end if int
 						else if (q.hasNext()) {
@@ -185,9 +185,9 @@ public class RelationalQuestion extends Question {
 							System.out.println("Is it longer than " + feet + " feet?");
 							System.out.println(answer.getLength());
 							if (feet < answer.getLength()) {
-								System.out.println("Yes, the animal is longer than " + feet + " feet");
+								System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + "the animal is longer than " + feet + " feet");
 							} else {
-								System.out.println("No, the animal is not longer than " + feet + " feet");
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + "the animal is not longer than " + feet + " feet");
 							}
 						} // end if int
 						else if (q.hasNext()) {
@@ -209,9 +209,9 @@ public class RelationalQuestion extends Question {
 							System.out.println("Is it faster than " + mph + " mph?");
 							System.out.println(answer.getSpeed());
 							if (mph < answer.getSpeed()) {
-								System.out.println("Yes, the animal is faster than " + mph + " mph");
+								System.out.println(Ansi.GREEN + "Yes " + Ansi.RESET + "the animal is faster than " + mph + " mph");
 							} else {
-								System.out.println("No, the animal is not faster than " + mph + " mph");
+								System.out.println(Ansi.RED + "No " + Ansi.RESET + "the animal is not faster than " + mph + " mph");
 							}
 						} // end if int
 						else if (q.hasNext()) {
@@ -223,7 +223,7 @@ public class RelationalQuestion extends Question {
 
 				//GO BACK
 				if (relationalQuestionNumber.equals("9")) {
-					System.out.println("Okay!");
+					System.out.println(Ansi.MAGENTA + "Okay!" + Ansi.RESET);
 					decideToDecrement = false;
 				}
 			} // end realtionalQuestion if
