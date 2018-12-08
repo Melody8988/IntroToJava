@@ -1,35 +1,27 @@
 //Used this post https://stackoverflow.com/questions/8965006/java-recursive-fibonacci-sequence
-//to help with fibonnaci logic on line 15
+//to help with fibonnaci logic on line 27
 
 public class FibRec implements FibInterface {
    
-    public int fibSequence(int n) {
-      
-        if (n == 0)
-            return 0;
-        if (n <= 2){
-            return 1;
+    public void fibSequence(int n) {
 
-        }else {
-           
-            int fibonnaci = fibSequence(n - 1) + fibSequence(n - 2);
-            return fibonnaci;
-            
+        System.out.println("Fibonacci up to " + n ); 
+        //Loop for printing
+        for(int i=0; i < n; i++){ 
+            System.out.print(getFib(i) + " "); 
         }
     } // fibbonacci recursivly 
 
     public int getFib(int n){
-        int t1 = 0; //previos 
-        int t2 = 1; //current
-        int printn = n-1;
-        
 
-        for (int i = 1; i <= printn; ++i) { //n is number of terms 
+        if (n == 0)
+            return 0;
+        if (n == 1){
+            return 1;
 
-            int sum = t1 + t2;
-            t1 = t2;
-            t2 = sum;  
-    }
-    return t1;
+        }else {
+            int fibonnaci = getFib(n - 1) + getFib(n - 2);
+            return fibonnaci;
+        }
   }
 } // FibRec class
