@@ -1,4 +1,3 @@
-
 public class FibIter implements FibInterface {
    
     public void fibSequence(int n) {
